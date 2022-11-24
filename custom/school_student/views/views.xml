@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="school_student_list_view" model="ir.ui.view">
+        <field name="name">school_student.list.view</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="school_id"/>
+                <field name="is_virtual_school"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="school_student_form_view" model="ir.ui.view">
+        <field name="name">School_student.form.view</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="currency_id"/>
+                        <field name="school_id" string="School"/>
+                        <field name="school_address"/>
+                        <field name="hobby_list" widget="many2many_tags"/>
+                        <field name="student_fees"/>
+                        <field name="total_fees" widget="monetary"/>
+                        <field name="ref_id"/>
+                        <field name="active"/>
+                    </group>
+                    <group>
+                        <field name="data_nasc" help="Data de nascimento do aluno"/>
+                        <field name="idade" help="Idade do aluno"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="school_extend_form_view" model="ir.ui.view">
+        <field name="name">school.extend.form.view</field>
+        <field name="model">school</field>
+        <field name="inherit_id" ref="school.school_form_view"/>
+        <field name="arch" type="xml">
+            <field name="type_school" position="after">
+                <field name="school_list" string="Estudantes">
+                    <tree editable="top">
+                        <field name="name"/>
+                    </tree>
+                    <form>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </form>
+                </field>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="school_student.action_window">
+        <field name="name">School Student</field>
+        <field name="res_model">school.student</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--                        BOTÕES DE MENU                             -->
+
+    <menuitem name="School Students" id="menu_root" web_icon="school_student,static/description/icon.png"/>
+
+    <menuitem name="Lista" id="menu_1" parent="menu_root"/>
+    <menuitem name="Hobby" id="menu_2" parent="menu_root"/>
+
+    <menuitem name="List" id="school_student.menu_1_list" parent="menu_1"
+              action="school_student.action_window"/>
+    <!-- - - - - - - - - - - - - - - - - - - - -->
+</odoo>
