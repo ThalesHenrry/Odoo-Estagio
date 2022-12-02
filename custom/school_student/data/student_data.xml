@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo nocreate="1">
+
+    <!--    Criando aluno direto pelo xml, Many2One-->
+
+    <record id="student_3" model="school.student">
+        <field name="name">Ronaldo Aleixo</field>
+        <field name="school_id" ref="school_1"/>
+        <field name="total_fees">35</field>
+    </record>
+
+    <!--    Criando escola direto pelo xml, One2Many-->
+
+    <record id="school_3" model="school">
+        <field name="name">Galdino</field>
+        <field name="email">Galdino.Pinheiro@gmail.com</field>
+        <field name="phone">(11)4258-6345</field>
+    </record>
+
+    <record id="student_4" model="school.student">
+        <field name="name">Bruna Milahu</field>
+        <field name="school_id" ref="school_3"/>
+        <field name="total_fees">85</field>
+    </record>
+
+
+</odoo>

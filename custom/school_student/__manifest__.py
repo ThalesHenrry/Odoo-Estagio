@@ -17,7 +17,8 @@
         "wizard/student_fees_update_wizard_view.xml",
         "data/hobby.csv",
         "data/school.csv",
-        "data/school.student.csv"
+        "data/school.student.csv",
+        "data/student_data.xml"
     ],
     'application': True
 }
