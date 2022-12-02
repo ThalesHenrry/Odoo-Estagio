@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record id="school_student_list_view" model="ir.ui.view">
-        <field name="name">school_student.list.view</field>
-        <field name="model">school.student</field>
-        <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-                <field name="school_id"/>
-                <field name="is_virtual_school"/>
-            </tree>
-        </field>
+
+    <record id="school_student.action_window" model="ir.actions.act_window">
+        <field name="name">School Student</field>
+        <field name="res_model">school.student</field>
+        <field name="view_mode">tree,form</field>
     </record>
 
     <record id="school_student_form_view" model="ir.ui.view">
@@ -17,6 +12,9 @@
         <field name="model">school.student</field>
         <field name="arch" type="xml">
             <form>
+                <button name="botao" string="Botao Teste Clique-me" type="object"/>
+                <button name="wiz_open" string="wizard open using custom method" type="object"/>
+                <button name="school_student.student_fees_update_action" string="Wizard open using action" type="action"/>
                 <group>
                     <group>
                         <field name="name"/>
@@ -35,6 +33,18 @@
                     </group>
                 </group>
             </form>
+        </field>
+    </record>
+
+    <record id="school_student_list_view" model="ir.ui.view">
+        <field name="name">school_student.list.view</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="school_id"/>
+                <field name="is_virtual_school"/>
+            </tree>
         </field>
     </record>
 
@@ -59,11 +69,6 @@
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="school_student.action_window">
-        <field name="name">School Student</field>
-        <field name="res_model">school.student</field>
-        <field name="view_mode">tree,form</field>
-    </record>
 
     <!--                        BOTÕES DE MENU                             -->
 
@@ -74,5 +79,5 @@
 
     <menuitem name="List" id="school_student.menu_1_list" parent="menu_1"
               action="school_student.action_window"/>
-    <!-- - - - - - - - - - - - - - - - - - - - -->
+
 </odoo>

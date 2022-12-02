@@ -7,21 +7,9 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="school_root_menu" name="School" web_icon="school,static/description/icon.png"/>
+    <menuitem id="school_root_menu" name="School" web_icon="school,static/description/icon.png"/>/>
     <menuitem id="school_sub_menu" parent="school_root_menu" name="School Profile"/>
     <menuitem id="school_profile_menu" action="action_school_profile" parent="school_sub_menu"/>
-
-    <record id="school_list_view" model="ir.ui.view">
-        <field name="name">school.list.view</field>
-        <field name="model">school</field>
-        <field name="arch" type="xml">
-            <tree>
-                <field name="name"/>
-                <field name="email"/>
-                <field name="phone"/>
-            </tree>
-        </field>
-    </record>
 
     <record id="school_form_view" model="ir.ui.view">
         <field name="name">school.form.view</field>
@@ -42,6 +30,7 @@
                     <group>
                         <field name="time_date"/>
                         <field name="type_school" string="Tipo de Escola" help="Por favor insira o tipo de Escola"/>
+                        <field name="teste" invisible="1"/>
                     </group>
                     <group>
                         <field name="documents" filename="name_docs"/>
@@ -53,5 +42,19 @@
             </form>
         </field>
     </record>
+
+    <record id="school_list_view" model="ir.ui.view">
+        <field name="name">school.list.view</field>
+        <field name="model">school</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+            </tree>
+        </field>
+    </record>
+
+
 
 </odoo>

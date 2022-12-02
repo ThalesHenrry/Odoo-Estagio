@@ -1,0 +1,3 @@
+id,name,school_id:id,total_fees,hobby_list:id
+student_1,"Camila de Lucca","school_1",250,"hobby_3"
+student_2,"Loise Paiva","school_2",350,"hobby_7,hobby_8"

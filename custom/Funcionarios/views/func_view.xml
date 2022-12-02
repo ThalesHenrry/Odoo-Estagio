@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <record id="action_func" model="ir.actions.act_window">
+        <field name="name">Funcionarios</field>
+        <field name="res_model">func</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="func_root" name="Funcionários" web_icon="func,static/description/icon.png"/>
+    <menuitem id="func_submenu" name="Lista Funcionários" parent="func_root"/>
+    <menuitem id="func_min_submenu" name="Cadastro funcionarios" action="action_func" parent="func_submenu"/>
+
+    <record id="func_form" model="ir.ui.view">
+        <field name="name">func.form</field>
+        <field name="model">func</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name" placeholder="Nome do Funcionário"/>
+                        <field name="cargo" placeholder="Cargo ocupado"/>
+                        <field name="school_id" string="Funcionário da Instituição"/>
+                        <field name="data_e"/>
+                        <field name="data_s"/>
+                    </group>
+                    <group>
+                        <field name="data_hora"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="func_list" model="ir.ui.view">
+        <field name="name">func.list</field>
+        <field name="model">func</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="Nome"/>
+                <field name="cargo"/>
+                <field name="school_id" string="Instituição"/>
+            </tree>
+        </field>
+    </record>
+
+<!--    <record id="school_extend_form_view_func" model="ir.ui.view">-->
+<!--        <field name="name">school.extend.form.view.func</field>-->
+<!--        <field name="model">school</field>-->
+<!--        <field name="inherit_id" ref="school.school_form_view"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <field name="type_school" position="after">-->
+<!--                <field name="school_list" string="Funcionários">-->
+<!--                    <tree editable="top">-->
+<!--                        <field name="name"/>-->
+<!--                    </tree>-->
+<!--                    <form>-->
+<!--                        <group>-->
+<!--                            <field name="name"/>-->
+<!--                        </group>-->
+<!--                    </form>-->
+<!--                </field>-->
+<!--            </field>-->
+<!--        </field>-->
+<!--    </record>-->
+
+</odoo>

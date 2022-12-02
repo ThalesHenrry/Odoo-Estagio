@@ -13,6 +13,11 @@
     'data': [
         "security/ir.model.access.csv",
         "views/views.xml",
-        "views/hobby_view.xml"
-    ]
+        "views/hobby_view.xml",
+        "wizard/student_fees_update_wizard_view.xml",
+        "data/hobby.csv",
+        "data/school.csv",
+        "data/school.student.csv"
+    ],
+    'application': True
 }
