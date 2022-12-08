@@ -23,8 +23,6 @@ class SchoolProfile(models.Model):
     auto_rank = fields.Integer(compute="_auto_rank_populate", string="Auto Rank")
     teste = fields.Char(name="space")
 
-
-
     # restrição de nome unico
     _sql_constraints = [
         ('name_unique', 'unique (name)', "Por favor cadastre uma nova escola, essa já existe.")

@@ -7,3 +7,4 @@ class School(models.Model):
 
     func_list = fields.One2many(comodel_name="func", inverse_name="school_id", string="Funcionarios")
 
+

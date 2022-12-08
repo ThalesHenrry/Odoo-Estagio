@@ -45,24 +45,24 @@
         </field>
     </record>
 
-<!--    <record id="school_extend_form_view_func" model="ir.ui.view">-->
-<!--        <field name="name">school.extend.form.view.func</field>-->
-<!--        <field name="model">school</field>-->
-<!--        <field name="inherit_id" ref="school.school_form_view"/>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <field name="type_school" position="after">-->
-<!--                <field name="school_list" string="Funcionários">-->
-<!--                    <tree editable="top">-->
-<!--                        <field name="name"/>-->
-<!--                    </tree>-->
-<!--                    <form>-->
-<!--                        <group>-->
-<!--                            <field name="name"/>-->
-<!--                        </group>-->
-<!--                    </form>-->
-<!--                </field>-->
-<!--            </field>-->
-<!--        </field>-->
-<!--    </record>-->
+    <!--    <record id="school_extend_form_view_func" model="ir.ui.view">-->
+    <!--        <field name="name">school.extend.form.view.func</field>-->
+    <!--        <field name="model">school</field>-->
+    <!--        <field name="inherit_id" ref="school.school_form_view"/>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <field name="type_school" position="after">-->
+    <!--                <field name="school_list" string="Funcionários">-->
+    <!--                    <tree editable="top">-->
+    <!--                        <field name="name"/>-->
+    <!--                    </tree>-->
+    <!--                    <form>-->
+    <!--                        <group>-->
+    <!--                            <field name="name"/>-->
+    <!--                        </group>-->
+    <!--                    </form>-->
+    <!--                </field>-->
+    <!--            </field>-->
+    <!--        </field>-->
+    <!--    </record>-->
 
 </odoo>

@@ -1,5 +1,5 @@
 from lxml import etree
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 import random
 from odoo.exceptions import UserError
 
@@ -22,8 +22,10 @@ class school_student(models.Model):
                                ('account.move', 'Invoice')],
                               string="Reference Field")
     active = fields.Boolean(string="Ativo")
-    data_nasc = fields.Date(string="Data de Nascimento")
+    data_nasc = fields.Date(string="Data de Nascimento", default=fields.Date.today())
     idade = fields.Integer(string="Idade")
+    ra = fields.Integer(string="RA")
+    estudante_img = fields.Image("Estudande Imagem")
 
     @api.model
     def create(self, values):
@@ -35,6 +37,11 @@ class school_student(models.Model):
 
     # ----------------------------------------------------
 
+    state = fields.Selection([('irregular', 'Irregular'),
+                              ('medio', 'Médio'),               #Barra de Status
+                              ('bom', 'Bom'),
+                              ('exemplar', 'Exemplar')], string="state")
+
     def wiz_open(self):
 
         return self.env['ir.actions.act_window']._for_xml_id("school_student.student_fees_update_action")
@@ -43,6 +50,10 @@ class school_student(models.Model):
                 'res_model': 'student.fees.update.wizard',
                 'view_mode': 'form',
                 'target': 'new'}
+
+    def butClick(self):
+
+        raise UserError(_("Aluno(a) Pagante"))
 
     def botao(self):
         print("Botao teste, clique")

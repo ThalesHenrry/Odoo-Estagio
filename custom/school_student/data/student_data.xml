@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<odoo nocreate="1">
+<odoo noupdate="1">
 
     <!--    Criando aluno direto pelo xml, Many2One-->
 
