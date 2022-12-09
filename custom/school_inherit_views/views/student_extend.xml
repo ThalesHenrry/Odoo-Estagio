@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!--    <record id="student_form_inherit_view" model="ir.ui.view">-->
+    <!--        <field name="name">student.form.inherit.view</field>-->
+    <!--        <field name="model">school.student</field>-->
+    <!--        <field name="inherit_id" ref="school_student.school_student_form_view"/>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <xpath expr="//form//sheet" position="inside">-->
+    <!--                <group id="write_information">-->
+    <!--                    <field name="write_uid"/>-->
+    <!--                    <field name="write_date"/>-->
+    <!--                </group>-->
+    <!--            </xpath>-->
+    <!--            <xpath expr="//form//sheet//notebook//page[1]//group[2]//group[2]//field@name='create_uid']"-->
+    <!--                   position="after">-->
+    <!--                <field name="write_uid"/>-->
+    <!--                <field name="write_date"/>-->
+    <!--            </xpath>-->
+
+    <!--        </field>-->
+    <!--    </record>-->
+
+    <!--    <record id="student_form_view_extend" model="ir.ui.view">-->
+    <!--        <field name="name">school.student.form.view.extend</field>-->
+    <!--        <field name="model">school.student</field>-->
+    <!--        <field name="inherit_id" ref="school_student.school_student_form_view"/>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <field name="idade" position="after">-->
+    <!--                <field name="write_uid"/>-->
+    <!--                <field name="write_date"/>-->
+    <!--            </field>-->
+    <!--            <field name="idade" position="after">-->
+    <!--                <field name="write_date"/>-->
+    <!--            </field>-->
+    <!--            <field name="idade" position="after">-->
+    <!--                <h1>LTDA</h1>-->
+    <!--                <group>-->
+    <!--                    <field name="write_uid"/>-->
+    <!--                </group>-->
+    <!--                <field name="write_date"/>-->
+    <!--            </field>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+
+    <!--    <record id="school_list_view_extend" model="ir.ui.view">-->
+    <!--        <field name="name">school.student.list.view.extend</field>-->
+    <!--        <field name="model">school.student</field>-->
+    <!--        <field name="inherit_id" ref="school_student.school_student_list_view"/>-->
+    <!--        <field name="arch" type="xml">-->
+    <!--            <field name="name" position="before">-->
+    <!--                <field name="write_date"/>-->
+    <!--            </field>-->
+    <!--        </field>-->
+    <!--    </record>-->
+
+    <!--  O foco desse inherit é fazer uma conexão com a a list do school_student, podendo alimentar uma tabela herança,-->
+    <!--com todas as informações colocadas dentro desse field acima.-->
+
+
+</odoo>

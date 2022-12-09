@@ -5,7 +5,7 @@
         <field name="name">School Student</field>
         <field name="res_model">school.student</field>
         <field name="context">{'group_by':''}</field>
-        <field name="view_mode">kanban,tree,form,graph,calendar</field>
+        <field name="view_mode">kanban,tree,form,graph,pivot,calendar</field>
     </record>
 
     <record id="school_student_form_view" model="ir.ui.view">
@@ -26,7 +26,7 @@
                         <page string="Perfil">
                             <group>
                                 <group>
-                                    <field name="estudante_img" class="oe_avatar" widget="image"/>
+                                    <field name="estudante_img" class="oe_avatar" widget="image" />
                                 </group>
                                 <group>
                                     <field name="name"/>
@@ -38,10 +38,13 @@
                                     <field name="total_fees" widget="monetary"/>
                                     <field name="ref_id"/>
                                     <field name="active"/>
-                                </group>
-                                <group>
                                     <field name="data_nasc" help="Data de nascimento do aluno"/>
                                     <field name="idade" help="Idade do aluno"/>
+                                </group>
+                                <group>
+                                    <field name="id"/>
+                                    <field name="create_date"/>
+                                    <field name="create_uid"/>
                                 </group>
                             </group>
                         </page>
@@ -162,13 +165,26 @@
         <field name="model">school.student</field>
         <field name="arch" type="xml">
             <graph disable_linking="1" stacked="False" type="line">
-                <field name="school_id" />
+                <field name="school_id"/>
                 <field name="data_nasc" interval="year"/>
                 <field name="student_fees" type="measure"/>
             </graph>
         </field>
     </record>
 
+    <record id="school_student_pivot_view" model="ir.ui.view">
+        <field name="name">school.student.pivot.view</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="total_fees" type="measure"/>
+<!--                <field name="name" type="row"/>-->
+                <field name="school_id" type="col"/>
+                <field name="student_fees" type="col"/>
+                <field name="data_nasc" type="row" interval="year"/>
+            </pivot>
+        </field>
+    </record>
     <!--                        BOTÕES DE MENU                             -->
 
     <menuitem name="School Students" id="menu_root" web_icon="school_student,static/description/icon.png"/>

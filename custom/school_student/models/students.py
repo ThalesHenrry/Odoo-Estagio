@@ -25,7 +25,7 @@ class school_student(models.Model):
     data_nasc = fields.Date(string="Data de Nascimento", default=fields.Date.today())
     idade = fields.Integer(string="Idade")
     ra = fields.Integer(string="RA")
-    estudante_img = fields.Image("Estudande Imagem")
+    estudante_img = fields.Image('Foto 3x4')
 
     @api.model
     def create(self, values):
