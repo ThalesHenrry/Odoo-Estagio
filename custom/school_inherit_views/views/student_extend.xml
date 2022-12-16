@@ -21,27 +21,27 @@
     <!--        </field>-->
     <!--    </record>-->
 
-    <!--    <record id="student_form_view_extend" model="ir.ui.view">-->
-    <!--        <field name="name">school.student.form.view.extend</field>-->
-    <!--        <field name="model">school.student</field>-->
-    <!--        <field name="inherit_id" ref="school_student.school_student_form_view"/>-->
-    <!--        <field name="arch" type="xml">-->
-    <!--            <field name="idade" position="after">-->
-    <!--                <field name="write_uid"/>-->
-    <!--                <field name="write_date"/>-->
-    <!--            </field>-->
-    <!--            <field name="idade" position="after">-->
-    <!--                <field name="write_date"/>-->
-    <!--            </field>-->
-    <!--            <field name="idade" position="after">-->
-    <!--                <h1>LTDA</h1>-->
-    <!--                <group>-->
-    <!--                    <field name="write_uid"/>-->
-    <!--                </group>-->
-    <!--                <field name="write_date"/>-->
-    <!--            </field>-->
-    <!--        </field>-->
-    <!--    </record>-->
+        <record id="student_form_view_extend" model="ir.ui.view">
+            <field name="name">school.student.form.view.extend</field>
+            <field name="model">school.student</field>
+            <field name="inherit_id" ref="school_student.school_student_form_view"/>
+            <field name="arch" type="xml">
+                <field name="idade" position="after">
+                    <field name="write_uid"/>
+                    <field name="write_date"/>
+                </field>
+                <field name="idade" position="after">
+                    <field name="write_date"/>
+                </field>
+                <field name="idade" position="after">
+                    <h1>LTDA</h1>
+                    <group>
+                        <field name="write_uid"/>
+                    </group>
+                    <field name="write_date"/>
+                </field>
+            </field>
+        </record>
 
 
     <!--    <record id="school_list_view_extend" model="ir.ui.view">-->

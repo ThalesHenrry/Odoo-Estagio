@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="action_inv" model="ir.actions.act_window">
+        <field name="name">Inventário</field>
+        <field name="res_model">inventario</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="Inventario_root" name="Inventário" action="action_inv"
+              web_icon="inventario,static/description/icon.png"/>
+
+    <record id="inv_form" model="ir.ui.view">
+        <field name="name">inv.form</field>
+        <field name="model">inventario</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" string="Funcionário"/>
+                            <field name="dep"/>
+                        </group>
+                        <group>
+                            <field name="ip"/>
+                            <field name="ramal"/>
+                            <field name="pr"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Hardware">
+                            <group>
+                                <group>
+                                    <field name="comp"/>
+                                    <field name="dum"/>
+
+                                    <field name="moni"/>
+                                    <field name="dois"/>
+
+                                    <field name="tm"/>
+                                    <field name="dres"/>
+
+                                    <field name="head" attrs="{'invisible':[('hitec', '!=', 7)]}"/>
+
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Software">
+                            <group>
+                                <group>
+                                    <field name="acessor"/>
+                                    <field name="office"/>
+                                    <field name="comuni"/>
+                                    <field name="hitec"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Estoque">
+                            <group>
+                                <group>
+
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="inv_list" model="ir.ui.view">
+        <field name="name">inv.list</field>
+        <field name="model">inventario</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="dep"/>
+                <field name="ip"/>
+                <field name="ramal"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

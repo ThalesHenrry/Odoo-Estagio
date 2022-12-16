@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<odoo>
+
+    <record id="action_estoque" model="ir.actions.act_window">
+        <field name="name">Estoque</field>
+        <field name="res_model">estoque</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="estoque_root" name="Estoque" parent="Inventario_root"/>
+    <menuitem id="sub_estoque" name="Estoque" parent="estoque_root" action="action_estoque"/>
+
+    <record id="estoque_form" model="ir.ui.view">
+        <field name="name">estoque.form</field>
+        <field name="model">estoque</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="data"/>
+                        <field name="estoque"/>
+                        <field name="tabela">
+                            <tree>
+                                <field name="classe"/>
+                                <field name="name" decoration-bf="1"/>
+                                <field name="product_template_variant_value_ids"/>
+                                <field name="comp_id"/>
+                            </tree>
+                        </field>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="estoque_list" model="ir.ui.view">
+        <field name="name">estoque.list</field>
+        <field name="model">estoque</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="data"/>
+                <field name="estoque" />
+               <field name="tabela"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

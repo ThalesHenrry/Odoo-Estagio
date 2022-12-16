@@ -5,7 +5,7 @@
     <record id="action_func" model="ir.actions.act_window">
         <field name="name">Funcionarios</field>
         <field name="res_model">func</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <menuitem id="func_root" name="Funcionários" web_icon="func,static/description/icon.png"/>
@@ -44,6 +44,43 @@
             </tree>
         </field>
     </record>
+
+<!--    <record id="func_kanban_view" model="ir.ui.view">-->
+<!--        <field name="name">func.kanban.view</field>-->
+<!--        <field name="model">func</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <kanban>-->
+<!--                <field name="name"/>-->
+<!--                <field name="cargo"/>-->
+<!--                <field name="school_id"/>-->
+<!--                <field name="func_img"/>-->
+<!--                <templates>-->
+<!--                    <t t-name="kanban-box">-->
+<!--                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill">-->
+<!--                            <div class="o_kanban_image d-none d-md-block"-->
+<!--                                 t-attf-style="background-image:url('#{kanban_image('func', 'func_img', record.id.raw_value, placeholder)}')">-->
+<!--                                &lt;!&ndash; <img class="o_kanban_image_inner_pic"&ndash;&gt;-->
+<!--                                &lt;!&ndash; t-att-src="kanban_image('school.student', 'student_img', record.id.raw_value)"/>&ndash;&gt;-->
+<!--                            </div>-->
+<!--                            <div class="oe_kanban_details d-flex flex-column">-->
+<!--                                <strong>-->
+<!--                                    <field name="name"/>-->
+<!--                                </strong>-->
+<!--                                <ul>-->
+<!--                                    <li>Cargo:-->
+<!--                                        <field name="cargo"/>-->
+<!--                                    </li>-->
+<!--                                    <li>Escola:-->
+<!--                                        <field name="school_id" decoration-bf="1"/>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </t>-->
+<!--                </templates>-->
+<!--            </kanban>-->
+<!--        </field>-->
+<!--    </record>-->
 
     <!--    <record id="school_extend_form_view_func" model="ir.ui.view">-->
     <!--        <field name="name">school.extend.form.view.func</field>-->

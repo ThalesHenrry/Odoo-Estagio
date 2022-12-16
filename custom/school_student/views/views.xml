@@ -26,7 +26,7 @@
                         <page string="Perfil">
                             <group>
                                 <group>
-                                    <field name="estudante_img" class="oe_avatar" widget="image" />
+                                    <field name="estudante_img" class="oe_avatar" widget="image"/>
                                 </group>
                                 <group>
                                     <field name="name"/>
@@ -178,7 +178,7 @@
         <field name="arch" type="xml">
             <pivot>
                 <field name="total_fees" type="measure"/>
-<!--                <field name="name" type="row"/>-->
+                <!--                <field name="name" type="row"/>-->
                 <field name="school_id" type="col"/>
                 <field name="student_fees" type="col"/>
                 <field name="data_nasc" type="row" interval="year"/>

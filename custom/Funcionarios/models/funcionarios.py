@@ -11,3 +11,4 @@ class Funcionarios(models.Model):
     data_hora = fields.Datetime("Data e Hora", default=fields.Datetime.now(), readonly=1)
     data_e = fields.Date(string="Data de Entrada")
     data_s = fields.Date(string="Data de Saida")
+    func_img = fields.Image('Foto 3x4')

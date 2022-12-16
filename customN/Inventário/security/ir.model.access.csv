@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+inventario_user,access.inventario_user,model_inventario,base.group_user,1,1,1,1
+estoque_user,access.estoque_user,model_estoque,base.group_user,1,1,1,1
