@@ -30,5 +30,4 @@ class prod(models.Model):
     tm_id = fields.One2many('inventario', 'tm', string="Teclado/Mouse")
     head_id = fields.One2many('inventario', 'head', string="Telefone/Headphone")
 
-    prod_id = fields.Many2one('product.template', string="Tipo")
-    prod_tipo = fields.Selection(related="prod_id.estoque_id", string="Estoque")
+    prod_tipo = fields.Selection(related="product_tmpl_id.estoque_id", string="Estoque")

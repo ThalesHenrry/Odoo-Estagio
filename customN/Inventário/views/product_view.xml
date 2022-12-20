@@ -24,7 +24,7 @@
                 <xpath expr="//field[@name='categ_id']" position="after">
                     <field name="classe" readonly="1"/>
                     <field name="dependente"/>
-                    <field name="prod_tipo" readonly="1"/>
+                    <field name="prod_tipo" />
                 </xpath>
                 <xpath expr="//field[@name='detailed_type']" position="after">
                     <field name="comp_id" attrs="{'invisible':[('classe', '!=', 'compartilhamento')]}"/>

@@ -24,7 +24,7 @@
                         <field name="tabela">
                             <tree>
                                 <field name="prod_tipo" string="Tipo"/>
-                                <field name="classe"/>
+                                <field name="classe" invisible="1"/>
                                 <field name="name" decoration-bf="1"/>
                                 <field name="product_template_variant_value_ids" string="Atributos"
                                        widget="many2many_tags"/>
@@ -62,8 +62,8 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="data"/>
-                <field name="topo"/>
-                <field name="tabela"/>
+                <field name="topo" decoration-bf="1"/>
+                <field name="tabela" widget="badge"/>
             </tree>
         </field>
     </record>
