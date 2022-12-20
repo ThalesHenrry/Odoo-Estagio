@@ -10,6 +10,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='categ_id']" position="after">
                     <field name="classe"/>
+                    <field name="estoque_id" string="Tipo"/>
                 </xpath>
             </field>
         </record>
@@ -23,15 +24,29 @@
                 <xpath expr="//field[@name='categ_id']" position="after">
                     <field name="classe" readonly="1"/>
                     <field name="dependente"/>
+                    <field name="prod_tipo" readonly="1"/>
                 </xpath>
-                 <xpath expr="//field[@name='detailed_type']" position="after">
-                    <field name="comp_id" attrs = "{'invisible':[('classe', '!=', 'compartilhamento')]}"/>
-                     <field name="moni_id" attrs = "{'invisible':[('classe', '!=', 'monitor')]}"/>
-                     <field name="tm_id" attrs = "{'invisible':[('classe', '!=', 'teclado/mouse')]}"/>
-                     <field name="head_id" attrs = "{'invisible':[('classe', '!=', 'vendas')]}"/>
+                <xpath expr="//field[@name='detailed_type']" position="after">
+                    <field name="comp_id" attrs="{'invisible':[('classe', '!=', 'compartilhamento')]}"/>
+                    <field name="moni_id" string="Monitores" attrs="{'invisible':[('classe', '!=', 'monitor')]}"/>
+                    <field name="tm_id" attrs="{'invisible':[('classe', '!=', 'teclado/mouse')]}"/>
+                    <field name="head_id" attrs="{'invisible':[('classe', '!=', 'vendas')]}"/>
                 </xpath>
             </field>
         </record>
+
+        <!-- List Variante -->
+
+        <!--        <record id="classeum_extend_list_view" model="ir.ui.view">-->
+        <!--            <field name="name">classeum.extend.list.view</field>-->
+        <!--            <field name="model">product.product</field>-->
+        <!--            <field name="inherit_id" ref="product.product_product_tree_view"/>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <xpath expr="//field[@name='product_template_variant_value_ids']" position="after">-->
+        <!--                    <field name=""/>-->
+        <!--                </xpath>-->
+        <!--            </field>-->
+        <!--        </record>-->
 
     </data>
 </odoo>

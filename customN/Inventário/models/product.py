@@ -16,6 +16,9 @@ class product(models.Model):
                                ('Cabo', 'Cabo'),
                                ('vendas', 'Vendas')])
 
+    estoque_id = fields.Selection([('software', 'SOFTWARE'),
+                                   ('hardware', 'HARDWARE')], string="Estoque")
+
 
 class prod(models.Model):
     _inherit = "product.product"
@@ -23,6 +26,9 @@ class prod(models.Model):
     dependente = fields.Many2one('product.product', string="Dependentes")
 
     comp_id = fields.One2many('inventario', 'comp', string="Usuário")
-    moni_id = fields.One2many('inventario', 'moni')
-    tm_id = fields.One2many('inventario', 'tm')
-    head_id = fields.One2many('inventario', 'head')
+    moni_id = fields.One2many('inventario', 'moni', string="Monitor")
+    tm_id = fields.One2many('inventario', 'tm', string="Teclado/Mouse")
+    head_id = fields.One2many('inventario', 'head', string="Telefone/Headphone")
+
+    prod_id = fields.Many2one('product.template', string="Tipo")
+    prod_tipo = fields.Selection(related="prod_id.estoque_id", string="Estoque")

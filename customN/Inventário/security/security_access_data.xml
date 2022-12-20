@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+    <record id="adm_group" model="res.groups">
+        <field name="name">Adm Inventario</field>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+
+    <record id="base_group" model="res.groups">
+        <field name="name">Base Inventario TI</field>
+    </record>
+
+    <!-- Acesso Inventário-->
+
+    <record id="inventario_ti_adm" model="ir.model.access">
+        <field name="name">Adm</field>
+        <field name="model_id" ref="model_inventario"/>
+        <field name="group_id" ref="Inventário.adm_group"/>
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">1</field>
+        <field name="perm_unlink">0</field>
+    </record>
+
+    <record id="inventario_ti_base" model="ir.model.access">
+        <field name="name">Base</field>
+        <field name="model_id" ref="model_inventario"/>        <!-- nome do modulo -->
+        <field name="group_id" ref="Inventário.base_group"/>  <!-- nome da pasta do modulo -->
+        <field name="perm_read">1</field>
+        <field name="perm_write">1</field>
+        <field name="perm_create">0</field>
+        <field name="perm_unlink">0</field>
+    </record>
+
+    <!-- Acesso Estoque-->
+
+<!--        <record id="Estoque_ti_adm" model="ir.model.access">-->
+<!--        <field name="name">Adm</field>-->
+<!--        <field name="model_id" ref="model_estoque"/>-->
+<!--        <field name="group_id" ref="estoque.adm_group"/>-->
+<!--        <field name="perm_read">1</field>-->
+<!--        <field name="perm_write">1</field>-->
+<!--        <field name="perm_create">1</field>-->
+<!--        <field name="perm_unlink">0</field>-->
+<!--    </record>-->
+
+<!--    <record id="Estoque_ti_base" model="ir.model.access">-->
+<!--        <field name="name">Base</field>-->
+<!--        <field name="model_id" ref="model_estoque"/>        &lt;!&ndash; nome do modulo &ndash;&gt;-->
+<!--        <field name="group_id" ref="estoque.base_group"/>  &lt;!&ndash; nome da pasta do modulo &ndash;&gt;-->
+<!--        <field name="perm_read">1</field>-->
+<!--        <field name="perm_write">0</field>-->
+<!--        <field name="perm_create">0</field>-->
+<!--        <field name="perm_unlink">0</field>-->
+<!--    </record>-->
+
+
+</odoo>

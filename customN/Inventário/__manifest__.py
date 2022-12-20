@@ -12,6 +12,7 @@
     'depends': ['base', 'product', 'hr'],
     'data': [
         'security/ir.model.access.csv',
+        'security/security_access_data.xml',
         'views/inv_view.xml',
         'views/product_view.xml',
         'views/estoque_view.xml'

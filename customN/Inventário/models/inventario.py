@@ -3,11 +3,12 @@ from odoo import fields, models, api, _
 
 class inventario(models.Model):
     _name = "inventario"
+    _order = 'name'
 
 #Campo Funcionario
 
     name = fields.Many2one("hr.employee", string="Funcionários")
-    dep = fields.Many2one(related="name.department_id", string="Departamento")
+    dep = fields.Many2one(related="name.department_id", string="Departamento", store=True)
 
     ip = fields.Integer(string="IP")
     ramal = fields.Integer(string="Ramal")
@@ -17,7 +18,7 @@ class inventario(models.Model):
 
     comp = fields.Many2one("product.product", string="Compartilhamento", domain=[('classe', '=', 'compartilhamento')])
     dum = fields.Many2one(related="comp.dependente", string="-")
-    moni = fields.Many2one("product.product", string="Monitores", domain=[('classe', '=', 'monitor')])
+    moni = fields.Many2many("product.product", string="Monitores", domain=[('classe', '=', 'monitor')])
     dois = fields.Many2one(related="moni.dependente", string="-")
     tm = fields.Many2one("product.product", string="Teclado/Mouse", domain=[('classe', '=', 'teclado/mouse')])
     dres = fields.Many2one(related="tm.dependente", string="-")
